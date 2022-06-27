@@ -1,24 +1,16 @@
 {
-  "todos": [
+  "contacts": [
     {
-      "todo": "saikala",
+      "name": "Saikal",
+      "surname": "Alykulova",
+      "phone": "435",
       "id": 1
     },
     {
-      "todo": "dgfhfmjg337576",
+      "name": "Beka",
+      "surname": "weferd",
+      "phone": "45",
       "id": 2
-    },
-    {
-      "todo": "gfhjk",
-      "id": 3
-    },
-    {
-      "todo": "gfhjk",
-      "id": 4
-    },
-    {
-      "todo": "dqweds",
-      "id": 5
     }
   ]
 }

@@ -2,27 +2,27 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Add from "./components/Add/Add";
-import Counter from "./components/Counter/Counter";
+import Details from "./components/Details/Details";
 import Edit from "./components/Edit/Edit";
+import Header from "./components/Header/Header";
 import List from "./components/List/List";
 
-import CounterContextProvider from "./contexts/counterContext";
-import TodoContextProvider from "./contexts/todoContext";
+import ContactContextProvider from "./contexts/contactContext";
 
 const App = () => {
   return (
-    <TodoContextProvider>
-      <CounterContextProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/counter" element={<Counter />} />
-            <Route path="/add" element={<Add />} />
-            <Route path="/list" element={<List />} />
-            <Route path="/edit/:id" element={<Edit />} />
-          </Routes>
-        </BrowserRouter>
-      </CounterContextProvider>
-    </TodoContextProvider>
+    <ContactContextProvider>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<List />} />
+          <Route path="/add" element={<Add />} />
+          <Route path="/list" element={<List />} />
+          <Route path="/edit/:id" element={<Edit />} />
+          <Route path="/details/:id" element={<Details />} />
+        </Routes>
+      </BrowserRouter>
+    </ContactContextProvider>
   );
 };
 

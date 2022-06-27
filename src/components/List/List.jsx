@@ -1,22 +1,19 @@
 import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { todoContext } from "../../contexts/todoContext";
+import { contactContext } from "../../contexts/contactContext";
+import ContactCard from "../Card/Card";
 
 const List = () => {
-  const { getTodos, todos, deleteTodo } = useContext(todoContext);
+  const { getContacts, contacts, deleteContact } = useContext(contactContext);
   const navigate = useNavigate();
   useEffect(() => {
-    getTodos();
+    getContacts();
   }, []);
-  console.log(todos);
+  console.log(contacts);
   return (
     <div>
-      {todos.map(item => (
-        <div key={item.id}>
-          {item.todo}{" "}
-          <button onClick={() => deleteTodo(item.id)}>Delete</button>
-          <button onClick={() => navigate(`/edit/${item.id}`)}>Edit</button>
-        </div>
+      {contacts.map(item => (
+        <ContactCard key={item.id} item={item} deleteContact={deleteContact} />
       ))}
     </div>
   );
